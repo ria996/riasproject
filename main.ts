@@ -1,6 +1,7 @@
 namespace SpriteKind {
     export const Repair = SpriteKind.create()
     export const Planet = SpriteKind.create()
+    export const EndPlanet = SpriteKind.create()
 }
 function planet1 () {
     mySprite3 = sprites.create(img`
@@ -120,14 +121,16 @@ function planet2 () {
         .............................................
         .............................................
         .............................................
-        `, SpriteKind.Planet)
+        `, SpriteKind.EndPlanet)
     sprite4.setPosition(140, 70)
     for (let index = 0; index < 20; index++) {
         sprite4.x += -2
         pause(100)
     }
-    sprite4.destroy()
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.EndPlanet, function (sprite, otherSprite) {
+    game.over(true)
+})
 let sprite4: Sprite = null
 let mySprite2: Sprite = null
 let projectile: Sprite = null
@@ -292,6 +295,7 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite, 100, 100)
 mySprite.setStayInScreen(true)
 scroller.scrollBackgroundWithSpeed(-50, 0)
+info.startCountdown(20)
 planet1()
 game.onUpdateInterval(1000, function () {
     projectile = sprites.createProjectileFromSide(img`
