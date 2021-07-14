@@ -1,5 +1,5 @@
 {
-    "name": "Project",
+    "name": "Avoid the Asteroids",
     "description": "",
     "dependencies": {
         "device": "*",
