@@ -75,6 +75,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.EndPlanet, function (sprite, oth
 let mySprite2: Sprite = null
 let projectile: Sprite = null
 let mySprite3: Sprite = null
+game.splash("Avoid the Asteroids!")
 scene.setBackgroundImage(img`
     cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
     cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
